@@ -1,8 +1,11 @@
 import "./App.css";
+<<<<<<< HEAD
 import CurrencyInput from "./components/CurrencyInput";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+=======
+>>>>>>> 8982a66db8aebe2162a3278ee1d1fcacd5cb8ada
 function App() {
   const [amount1, setAmount1] = useState(1);
   const [amount2, setAmount2] = useState(1);
@@ -54,6 +57,7 @@ function App() {
   }
 
   return (
+<<<<<<< HEAD
     <div>
       <h1>Currency Converter</h1>
       <CurrencyInput
@@ -71,6 +75,11 @@ function App() {
         currency={currency2}
       />
     </div>
+=======
+    <>
+      <h1>Currency Converter</h1>
+    </>
+>>>>>>> 8982a66db8aebe2162a3278ee1d1fcacd5cb8ada
   );
 }
 
