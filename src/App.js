@@ -1,34 +1,30 @@
 import "./App.css";
-<<<<<<< HEAD
-import CurrencyInput from "./components/CurrencyInput";
 import { useState, useEffect } from "react";
+import CurrencyInput from "./components/CurrencyInput";
 import axios from "axios";
-
-=======
->>>>>>> 8982a66db8aebe2162a3278ee1d1fcacd5cb8ada
 function App() {
   const [amount1, setAmount1] = useState(1);
   const [amount2, setAmount2] = useState(1);
   const [currency1, setCurrency1] = useState("USD");
   const [currency2, setCurrency2] = useState("EUR");
   const [rates, setRates] = useState([]);
-
-  useEffect(() => {
+  const getData = () => {
     axios
       .get(
-        "https://api.apilayer.com/fixer/latest?base=USD&apikey=f8438a63039d0531f9a6381af814ae43"
+        "http://data.fixer.io/api/latest?access_key=3577ec41740bd590e72bafa71befb738&format=1"
       )
       .then((response) => {
         setRates(response.data.rates);
       });
+  };
+
+  useEffect(() => {
+    getData();
   }, []);
 
   useEffect(() => {
     if (!!rates) {
-      function init() {
-        handleAmount1Change(1);
-      }
-      init();
+      handleAmount1Change(1);
     }
   }, [rates]);
 
@@ -57,7 +53,6 @@ function App() {
   }
 
   return (
-<<<<<<< HEAD
     <div>
       <h1>Currency Converter</h1>
       <CurrencyInput
@@ -75,11 +70,6 @@ function App() {
         currency={currency2}
       />
     </div>
-=======
-    <>
-      <h1>Currency Converter</h1>
-    </>
->>>>>>> 8982a66db8aebe2162a3278ee1d1fcacd5cb8ada
   );
 }
 
